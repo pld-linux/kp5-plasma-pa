@@ -1,15 +1,15 @@
-%define		kdeplasmaver	5.11.2
+%define		kdeplasmaver	5.14.4
 %define		qtver		5.3.2
 %define		kpname		plasma-pa
 
 Summary:	KDE Plasma Pulse Audio
 Name:		kp5-%{kpname}
-Version:	5.11.2
+Version:	5.14.4
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	f0c44e3a23f15a84e774431ff7ca50a8
+# Source0-md5:	bf60a089095cfeca423a2e1dfc7fc627
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -78,8 +78,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/qml/org/kde/plasma/private/volume/qmldir
 %{_datadir}/kconf_update/disable_kmix.upd
 %{_datadir}/kconf_update/plasmaVolumeDisableKMixAutostart.pl
-#%{_datadir}/kde4/apps/kconf_update/disable_kmix.upd
-#%{_datadir}/kde4/apps/kconf_update/plasmaVolumeDisableKMixAutostart.pl
+#%%{_datadir}/kde4/apps/kconf_update/disable_kmix.upd
+#%%{_datadir}/kde4/apps/kconf_update/plasmaVolumeDisableKMixAutostart.pl
 %dir %{_datadir}/kpackage/kcms/kcm_pulseaudio
 %dir %{_datadir}/kpackage/kcms/kcm_pulseaudio/contents
 %dir %{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui
@@ -102,19 +102,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservices5/plasma-applet-org.kde.plasma.volume.desktop
 %{_datadir}/metainfo/org.kde.plasma.volume.appdata.xml
 %dir %{_datadir}/plasma/plasmoids/org.kde.plasma.volume
-%dir %{_datadir}/plasma/plasmoids/org.kde.plasma.volume/contents
-%dir %{_datadir}/plasma/plasmoids/org.kde.plasma.volume/contents/code
-%{_datadir}/plasma/plasmoids/org.kde.plasma.volume/contents/code/icon.js
-%dir %{_datadir}/plasma/plasmoids/org.kde.plasma.volume/contents/config
-%{_datadir}/plasma/plasmoids/org.kde.plasma.volume/contents/config/config.qml
-%{_datadir}/plasma/plasmoids/org.kde.plasma.volume/contents/config/main.xml
-%dir %{_datadir}/plasma/plasmoids/org.kde.plasma.volume/contents/ui
-%{_datadir}/plasma/plasmoids/org.kde.plasma.volume/contents/ui/ConfigGeneral.qml
-%{_datadir}/plasma/plasmoids/org.kde.plasma.volume/contents/ui/DeviceListItem.qml
-%{_datadir}/plasma/plasmoids/org.kde.plasma.volume/contents/ui/Header.qml
-%{_datadir}/plasma/plasmoids/org.kde.plasma.volume/contents/ui/ListItemBase.qml
-%{_datadir}/plasma/plasmoids/org.kde.plasma.volume/contents/ui/SmallToolButton.qml
-%{_datadir}/plasma/plasmoids/org.kde.plasma.volume/contents/ui/StreamListItem.qml
-%{_datadir}/plasma/plasmoids/org.kde.plasma.volume/contents/ui/main.qml
-%{_datadir}/plasma/plasmoids/org.kde.plasma.volume/metadata.desktop
+%{_datadir}/plasma/plasmoids/org.kde.plasma.volume/contents.rcc
 %{_datadir}/plasma/plasmoids/org.kde.plasma.volume/metadata.json
