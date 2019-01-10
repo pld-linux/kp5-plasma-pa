@@ -77,7 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/qml/org/kde/plasma/private/volume/libplasma-volume-declarative.so
 %{_libdir}/qt5/qml/org/kde/plasma/private/volume/qmldir
 %{_datadir}/kconf_update/disable_kmix.upd
-%{_datadir}/kconf_update/plasmaVolumeDisableKMixAutostart.pl
+%attr(755,root,root) %{_datadir}/kconf_update/plasmaVolumeDisableKMixAutostart.pl
 #%%{_datadir}/kde4/apps/kconf_update/disable_kmix.upd
 #%%{_datadir}/kde4/apps/kconf_update/plasmaVolumeDisableKMixAutostart.pl
 %dir %{_datadir}/kpackage/kcms/kcm_pulseaudio
