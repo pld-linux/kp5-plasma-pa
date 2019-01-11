@@ -1,15 +1,15 @@
-%define		kdeplasmaver	5.14.4
-%define		qtver		5.3.2
+%define		kdeplasmaver	5.14.5
+%define		qtver		5.9.0
 %define		kpname		plasma-pa
 
 Summary:	KDE Plasma Pulse Audio
 Name:		kp5-%{kpname}
-Version:	5.14.4
+Version:	5.14.5
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	bf60a089095cfeca423a2e1dfc7fc627
+# Source0-md5:	ab16b6976bf83f4a4c1825456d23f356
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -37,6 +37,7 @@ BuildRequires:	xorg-driver-input-evdev-devel
 BuildRequires:	xorg-driver-input-synaptics-devel
 BuildRequires:	xorg-lib-libXft-devel
 BuildRequires:	xz
+Suggests:	perl-base
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		qt5dir		%{_libdir}/qt5
@@ -78,8 +79,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/qml/org/kde/plasma/private/volume/qmldir
 %{_datadir}/kconf_update/disable_kmix.upd
 %attr(755,root,root) %{_datadir}/kconf_update/plasmaVolumeDisableKMixAutostart.pl
-#%%{_datadir}/kde4/apps/kconf_update/disable_kmix.upd
-#%%{_datadir}/kde4/apps/kconf_update/plasmaVolumeDisableKMixAutostart.pl
+%dir %{_datadir}/kde4/apps
+%dir %{_datadir}/kde4/apps/kconf_update
+%{_datadir}/kde4/apps/kconf_update/disable_kmix.upd
+%attr(755,root,root) %{_datadir}/kde4/apps/kconf_update/plasmaVolumeDisableKMixAutostart.pl
 %dir %{_datadir}/kpackage/kcms/kcm_pulseaudio
 %dir %{_datadir}/kpackage/kcms/kcm_pulseaudio/contents
 %dir %{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui
