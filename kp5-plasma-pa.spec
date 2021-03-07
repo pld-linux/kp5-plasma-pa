@@ -1,15 +1,15 @@
-%define		kdeplasmaver	5.15.3
+%define		kdeplasmaver	5.21.2
 %define		qtver		5.9.0
 %define		kpname		plasma-pa
 
 Summary:	KDE Plasma Pulse Audio
 Name:		kp5-%{kpname}
-Version:	5.15.3
+Version:	5.21.2
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	97752f6f9a57d39eaa1b68b99f5880af
+# Source0-md5:	de8f8c6213f01aa15a9b3ed74d4cfc0b
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -54,6 +54,7 @@ install -d build
 cd build
 %cmake -G Ninja \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
+	-DHTML_INSTALL_DIR=%{_kdedocdir} \
 	../
 %ninja_build
 
@@ -86,14 +87,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kpackage/kcms/kcm_pulseaudio/contents
 %dir %{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui
 %{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/Advanced.qml
-%{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/Applications.qml
 %{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/CardListItem.qml
-%{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/DefaultDeviceButton.qml
 %{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/DeviceComboBox.qml
 %{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/DeviceListItem.qml
-%{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/Devices.qml
-%{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/Header.qml
-%{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/ListItemSeperator.qml
 %{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/MuteButton.qml
 %{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/StreamListItem.qml
 %{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/VolumeSlider.qml
@@ -106,3 +102,5 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/plasma/plasmoids/org.kde.plasma.volume
 %{_datadir}/plasma/plasmoids/org.kde.plasma.volume/contents.rcc
 %{_datadir}/plasma/plasmoids/org.kde.plasma.volume/metadata.json
+%dir %{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/code
+%{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/code/icon.js
