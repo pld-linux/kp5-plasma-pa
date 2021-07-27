@@ -1,15 +1,15 @@
-%define		kdeplasmaver	5.22.3
+%define		kdeplasmaver	5.22.4
 %define		qtver		5.9.0
 %define		kpname		plasma-pa
 
 Summary:	KDE Plasma Pulse Audio
 Name:		kp5-%{kpname}
-Version:	5.22.3
+Version:	5.22.4
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	cbc7e301283dad7f46edd76c525df037
+# Source0-md5:	31272515681adc5d0ca987a9dc182de5
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -97,7 +97,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kpackage/kcms/kcm_pulseaudio/metadata.desktop
 %{_datadir}/kpackage/kcms/kcm_pulseaudio/metadata.json
 %{_datadir}/kservices5/kcm_pulseaudio.desktop
-%{_datadir}/kservices5/plasma-applet-org.kde.plasma.volume.desktop
 %{_datadir}/metainfo/org.kde.plasma.volume.appdata.xml
 %dir %{_datadir}/plasma/plasmoids/org.kde.plasma.volume
 %{_datadir}/plasma/plasmoids/org.kde.plasma.volume/contents.rcc
