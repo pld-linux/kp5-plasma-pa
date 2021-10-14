@@ -1,15 +1,15 @@
-%define		kdeplasmaver	5.22.5
+%define		kdeplasmaver	5.23.0
 %define		qtver		5.9.0
 %define		kpname		plasma-pa
 
 Summary:	KDE Plasma Pulse Audio
 Name:		kp5-%{kpname}
-Version:	5.22.5
+Version:	5.23.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	d6feb495b5f998f1b0a8612e4d207150
+# Source0-md5:	a9d021b1a1bb492e0768678c4e078d36
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -83,23 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kde4/apps/kconf_update
 %{_datadir}/kde4/apps/kconf_update/disable_kmix.upd
 %attr(755,root,root) %{_datadir}/kde4/apps/kconf_update/plasmaVolumeDisableKMixAutostart.pl
-%dir %{_datadir}/kpackage/kcms/kcm_pulseaudio
-%dir %{_datadir}/kpackage/kcms/kcm_pulseaudio/contents
-%dir %{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui
-%{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/Advanced.qml
-%{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/CardListItem.qml
-%{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/DeviceComboBox.qml
-%{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/DeviceListItem.qml
-%{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/MuteButton.qml
-%{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/StreamListItem.qml
-%{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/VolumeSlider.qml
-%{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/ui/main.qml
-%{_datadir}/kpackage/kcms/kcm_pulseaudio/metadata.desktop
-%{_datadir}/kpackage/kcms/kcm_pulseaudio/metadata.json
+%{_datadir}/kpackage/kcms/kcm_pulseaudio
 %{_datadir}/kservices5/kcm_pulseaudio.desktop
 %{_datadir}/metainfo/org.kde.plasma.volume.appdata.xml
-%dir %{_datadir}/plasma/plasmoids/org.kde.plasma.volume
-%{_datadir}/plasma/plasmoids/org.kde.plasma.volume/contents.rcc
-%{_datadir}/plasma/plasmoids/org.kde.plasma.volume/metadata.json
-%dir %{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/code
-%{_datadir}/kpackage/kcms/kcm_pulseaudio/contents/code/icon.js
+%{_datadir}/plasma/plasmoids/org.kde.plasma.volume
