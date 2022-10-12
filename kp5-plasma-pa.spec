@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.25.5
+%define		kdeplasmaver	5.26.0
 %define		qtver		5.15.2
 %define		kpname		plasma-pa
 
 Summary:	KDE Plasma Pulse Audio
 Name:		kp5-%{kpname}
-Version:	5.25.5
-Release:	2
+Version:	5.26.0
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	5ba02725266407f99cec78bd33feb31c
+# Source0-md5:	f8b02b55c651c5149577793958284f41
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -80,7 +80,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kpname}.lang
 %defattr(644,root,root,755)
-%{_libdir}/qt5/plugins/kcms/kcm_pulseaudio.so
 %dir %{_libdir}/qt5/qml/org/kde/plasma/private/volume
 %{_libdir}/qt5/qml/org/kde/plasma/private/volume/PulseObjectFilterModel.qml
 %{_libdir}/qt5/qml/org/kde/plasma/private/volume/libplasma-volume-declarative.so
@@ -92,7 +91,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/apps/kconf_update/disable_kmix.upd
 %attr(755,root,root) %{_datadir}/kde4/apps/kconf_update/plasmaVolumeDisableKMixAutostart.pl
 %{_datadir}/kpackage/kcms/kcm_pulseaudio
-%{_datadir}/kservices5/kcm_pulseaudio.desktop
 %{_datadir}/metainfo/org.kde.plasma.volume.appdata.xml
 %{_datadir}/plasma/plasmoids/org.kde.plasma.volume
 %{_datadir}/kservices5/plasma-applet-org.kde.plasma.volume.desktop
+
+%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_pulseaudio.so
+%{_desktopdir}/kcm_pulseaudio.desktop
